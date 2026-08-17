@@ -13,6 +13,7 @@ import { RedFlags } from "@/components/article/RedFlags";
 import { Roadmap } from "@/components/article/Roadmap";
 import { Trust } from "@/components/article/Trust";
 import { Faq, faqs } from "@/components/article/Faq";
+import { reviews } from "@/components/article/Reviews";
 import { StickyToc } from "@/components/article/Toc";
 
 const title = "Which AI Course Is Best to Get a Job in 2026? (India Guide)";
@@ -30,6 +31,22 @@ export const Route = createFileRoute("/")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
     scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          name: "Best AI courses to get a job in 2026 (India)",
+          itemListOrder: "https://schema.org/ItemListOrderDescending",
+          numberOfItems: reviews.length,
+          itemListElement: reviews.map((r) => ({
+            "@type": "ListItem",
+            position: r.rank,
+            name: r.name,
+            description: r.bestFor,
+          })),
+        }),
+      },
       {
         type: "application/ld+json",
         children: JSON.stringify({
