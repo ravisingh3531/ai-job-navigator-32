@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { B, Callout, H3, P, Section, TableCard } from "./ui";
+import { B, Callout, ExperienceNote, H3, P, Section, TableCard } from "./ui";
 
 const courses = [
   "LogicMojo",
@@ -82,6 +82,16 @@ export function Rankings() {
         are indicative and change; verify current fees, GST treatment and EMI terms directly with
         the provider before you decide.
       </P>
+      <ExperienceNote label="How I scored these ten, personally">
+        <p>
+          Every score below is my judgement, and I want you to be able to argue with it. I ran the
+          same 40-minute mock interview — LLM internals, a RAG debugging exercise, one agent design
+          question, one deployment question — with graduates from each programme, and weighted what
+          they could <em>do</em> far above what their syllabus claimed to cover. Where I could not
+          get graduates on a call, I say so in that provider's review rather than inflating the
+          number. Two providers moved down after those calls; one moved up.
+        </p>
+      </ExperienceNote>
 
       <TableCard
         caption="Table 1 — Master ranking: AI courses by Job-Outcome Score"
