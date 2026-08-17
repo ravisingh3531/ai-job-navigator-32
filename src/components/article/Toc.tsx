@@ -8,8 +8,9 @@ export const tocItems: TocItem[] = [
   { href: "#market", label: "Reality check" },
   { href: "#skills", label: "Deep dive: skill stack" },
   { href: "#framework", label: "Evaluation framework" },
+  { href: "#deep-dive", label: "Why LogicMojo is #1" },
   {
-    href: "#rankings",
+    href: "#reviews",
     label: "Reviews",
     children: [
       { href: "#review-logicmojo", label: "LogicMojo" },
@@ -24,9 +25,12 @@ export const tocItems: TocItem[] = [
       { href: "#review-pw-guvi", label: "PW Skills / GUVI" },
     ],
   },
-  { href: "#quiz", label: "Course-fit quiz" },
   { href: "#matrix", label: "Best course for you" },
+  { href: "#red-flags", label: "Red flags & contracts" },
+  { href: "#roadmap", label: "Job-ready roadmap" },
+  { href: "#quiz", label: "6-question decision tool" },
   { href: "#faq", label: "FAQs" },
+  { href: "#author", label: "Author & trust" },
 ];
 
 const flat = tocItems.flatMap((i) => [i, ...(i.children ?? [])]);
