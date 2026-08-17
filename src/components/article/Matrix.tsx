@@ -1,4 +1,5 @@
 import { B, Callout, H3, P, Section, TableCard } from "./ui";
+import { Reveal } from "./Reveal";
 
 export function Matrix() {
   return (
@@ -59,9 +60,9 @@ export function Matrix() {
         If you answer these three honestly, the choice resolves itself — usually in about twenty
         minutes, and usually without another comparison article.
       </P>
-      <div className="space-y-5">
-        <div className="rounded-lg border border-border bg-card p-5">
-          <p className="font-display text-lg font-semibold">
+      <div className="grid gap-5">
+        <div className="surface-card p-6">
+          <p className="font-display text-lg font-semibold text-foreground">
             1. What exactly is the job title on the offer letter you want?
           </p>
           <p className="mt-2 leading-[1.7] text-foreground/85">
@@ -74,8 +75,8 @@ export function Matrix() {
             buying the broadest program available, which is also the slowest.
           </p>
         </div>
-        <div className="rounded-lg border border-border bg-card p-5">
-          <p className="font-display text-lg font-semibold">
+        <div className="surface-card p-6">
+          <p className="font-display text-lg font-semibold text-foreground">
             2. What is your real weekly capacity for the next 6–12 months?
           </p>
           <p className="mt-2 leading-[1.7] text-foreground/85">
@@ -87,8 +88,8 @@ export function Matrix() {
             you can purchase.
           </p>
         </div>
-        <div className="rounded-lg border border-border bg-card p-5">
-          <p className="font-display text-lg font-semibold">
+        <div className="surface-card p-6">
+          <p className="font-display text-lg font-semibold text-foreground">
             3. What is the actual gap — knowledge, evidence, or access?
           </p>
           <p className="mt-2 leading-[1.7] text-foreground/85">

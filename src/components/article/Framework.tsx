@@ -1,4 +1,5 @@
 import { B, Callout, P, Section } from "./ui";
+import { Reveal } from "./Reveal";
 
 const criteria = [
   {
@@ -52,17 +53,24 @@ export function Framework() {
         conclusions.
       </P>
       <div className="space-y-5">
-        {criteria.map((c) => (
-          <div key={c.n} className="rounded-lg border border-border bg-card p-5 sm:p-6">
-            <div className="flex flex-wrap items-baseline gap-3">
-              <span className="font-display text-2xl font-semibold text-primary">{c.n}</span>
-              <h3 className="font-display text-xl font-semibold text-foreground">{c.title}</h3>
-              <span className="rounded-full bg-highlight px-3 py-0.5 text-xs font-semibold tracking-wide text-primary">
-                weight {c.weight}
-              </span>
+        {criteria.map((c, i) => (
+          <Reveal key={c.n} delay={(i % 3) * 70}>
+            <div className="surface-card p-6 sm:p-7">
+              <div className="flex flex-wrap items-center gap-3">
+                <span
+                  className="flex h-10 w-10 items-center justify-center rounded-xl font-display text-lg font-bold text-primary-foreground"
+                  style={{ background: "var(--gradient-brand)" }}
+                >
+                  {c.n}
+                </span>
+                <h3 className="font-display text-xl font-semibold text-foreground">{c.title}</h3>
+                <span className="rounded-full border border-primary/25 bg-primary-soft px-3 py-0.5 text-xs font-bold tracking-wide text-primary">
+                  weight {c.weight}
+                </span>
+              </div>
+              <p className="mt-3 text-[1rem] leading-[1.75] text-foreground/80">{c.body}</p>
             </div>
-            <p className="mt-3 text-[1rem] leading-[1.7] text-foreground/85">{c.body}</p>
-          </div>
+          </Reveal>
         ))}
       </div>
       <Callout tone="warn" title="How the scoring works — and its limits">
