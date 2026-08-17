@@ -47,7 +47,7 @@ function Index() {
   return (
     <main id="top" className="min-h-screen scroll-mt-24 bg-background">
       <Hero />
-      <div className="mx-auto flex max-w-[100rem] justify-center gap-12 px-5 py-12 sm:px-8 sm:py-16">
+      <div className="mx-auto flex max-w-[100rem] flex-col justify-center gap-12 xl:flex-row px-5 py-12 sm:px-8 sm:py-16">
         <StickyToc />
         <div className="w-full max-w-4xl min-w-0">
           <article>
