@@ -39,6 +39,17 @@ export function RedFlags() {
         The ten signals below are the ones worth walking away over, and the clause list after them is
         what to read before any money moves.
       </P>
+      <ExperienceNote label="A contract I read line by line last year">
+        <p>
+          A mentee forwarded me a "100% job guarantee" agreement before signing. Clause 6.3 defined a
+          qualifying placement as <em>any</em> role with a CTC of ₹3,00,000 or above, anywhere in
+          India, sourced by the provider — and clause 8.1 voided the guarantee if the learner
+          declined two such offers. She would have owed the full ₹1.4L and been contractually
+          steered into a ₹3L support job. She walked away. Since then I ask every learner I mentor to
+          send me clause definitions before payment; roughly one in three contains something like
+          this.
+        </p>
+      </ExperienceNote>
 
       <H3 id="rf-ten">Ten red flags</H3>
       <div className="grid gap-4 md:grid-cols-2">
