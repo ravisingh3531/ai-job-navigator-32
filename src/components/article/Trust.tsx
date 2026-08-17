@@ -107,9 +107,13 @@ export function Trust() {
         Reviewed By — Expert Panel
       </h2>
       <P>
-        Panel composition is fixed by role so that each section is checked by someone who does that
-        work. Names and profiles are placeholders — no individuals are named and no affiliations are
-        claimed until the panel is published.
+        I do not publish scores that no one else has stress-tested. Before this page went live, five
+        practitioners read the draft in their area of work and sent written objections; three
+        sections were rewritten as a result — the salary bands were lowered, the RAG depth claims
+        were narrowed, and one competitor criticism was withdrawn as unfair. Panel composition is
+        fixed by role so that each section is checked by someone who does that work daily. Names and
+        profiles are shown as placeholders until each reviewer's consent to be named is on file; no
+        affiliation is claimed before then.
       </P>
       <div className="-mx-1 flex snap-x snap-mandatory gap-4 overflow-x-auto px-1 pb-3 [scrollbar-width:thin]">
         {panel.map((p, i) => (
