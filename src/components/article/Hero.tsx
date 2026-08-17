@@ -120,29 +120,27 @@ export function Intro() {
         will screen for.</B>
       </P>
       <P>Three failure patterns dominate this market. Learn to recognise them before you pay.</P>
-      <UL>
-        <li>
-          <B>The credential trap.</B> Courses that sell a university-affiliated certificate as the
-          hiring mechanism. In 2023 that partially worked. In 2026, recruiters at Indian product
-          companies and GCCs (global capability centres — the India arms of multinationals)
-          consistently report that non-degree AI certificates no longer carry weight in
-          shortlisting. The certificate opens no door on its own.
-        </li>
-        <li>
-          <B>The syllabus trap.</B> Curricula that were competitive in 2022 and have been patched
-          rather than rebuilt: six months of classical ML (regression, decision trees, scikit-learn),
-          one deep learning module, a "GenAI" bolt-on covering the ChatGPT API, and a Titanic-dataset
-          capstone. The learner graduates fluent in a stack that 2026 job descriptions barely
-          mention.
-        </li>
-        <li>
-          <B>The guarantee trap.</B> "Job guarantee," "pay after placement" and ISA (income-share
-          agreement — you pay a slice of future salary) programs whose contracts define "placement"
-          loosely enough that a ₹3.5 LPA support-engineering role satisfies it, and whose refund
-          clauses require a minimum number of applications, full attendance and passing internal
-          assessments — conditions that are, by design, failable.
-        </li>
-      </UL>
+      <div className="grid gap-4 sm:grid-cols-3">
+        <NoteCard index="01" title="The credential trap">
+          Courses that sell a university-affiliated certificate as the hiring mechanism. In 2023
+          that partially worked. In 2026, recruiters at Indian product companies and GCCs (global
+          capability centres — the India arms of multinationals) consistently report that non-degree
+          AI certificates no longer carry weight in shortlisting.{" "}
+          <B>The certificate opens no door on its own.</B>
+        </NoteCard>
+        <NoteCard index="02" title="The syllabus trap" delay={90}>
+          Curricula competitive in 2022 and patched rather than rebuilt: six months of classical ML
+          (regression, decision trees, scikit-learn), one deep learning module, a "GenAI" bolt-on
+          covering the ChatGPT API, and a Titanic-dataset capstone.{" "}
+          <B>The learner graduates fluent in a stack 2026 job descriptions barely mention.</B>
+        </NoteCard>
+        <NoteCard index="03" title="The guarantee trap" delay={180}>
+          "Job guarantee," "pay after placement" and ISA (income-share agreement — you pay a slice
+          of future salary) programs whose contracts define "placement" loosely enough that a ₹3.5
+          LPA support role satisfies it, and whose refund clauses require minimum applications, full
+          attendance and passing assessments — <B>conditions that are, by design, failable.</B>
+        </NoteCard>
+      </div>
       <P>
         Now make the cost of a wrong choice concrete, because it is not abstract. These are the
         patterns I see repeatedly among Indian learners who did everything they were told to do.
