@@ -8,6 +8,10 @@ import { Rankings } from "@/components/article/Rankings";
 import { Matrix } from "@/components/article/Matrix";
 import { Reviews } from "@/components/article/Reviews";
 import { Quiz } from "@/components/article/Quiz";
+import { DeepDive } from "@/components/article/DeepDive";
+import { RedFlags } from "@/components/article/RedFlags";
+import { Roadmap } from "@/components/article/Roadmap";
+import { Trust } from "@/components/article/Trust";
 import { Faq, faqs } from "@/components/article/Faq";
 import { StickyToc } from "@/components/article/Toc";
 
@@ -57,10 +61,14 @@ function Index() {
             <Skills />
             <Framework />
             <Rankings />
+            <DeepDive />
             <Reviews />
-            <Quiz />
             <Matrix />
+            <RedFlags />
+            <Roadmap />
+            <Quiz />
             <Faq />
+            <Trust />
           </article>
 
           <footer className="mt-20 rounded-2xl border border-border bg-secondary/60 p-6 text-sm leading-relaxed text-muted-foreground">
