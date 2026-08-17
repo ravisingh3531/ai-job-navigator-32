@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { B, Callout, P, Section } from "./ui";
+import { B, Callout, ExperienceNote, P, Section } from "./ui";
 import { Reveal } from "./Reveal";
 import { beginnerDossiers } from "./beginnerData";
 
@@ -835,6 +835,17 @@ export function Reviews() {
         because the page is getting long, and every course gets real cons, including the one ranked
         first.
       </P>
+      <ExperienceNote label="What I did before writing each of these ten reviews">
+        <p>
+          For every provider on this list I did the same four things: requested the module-level
+          syllabus as an ordinary prospective buyer, sat through at least one live or recorded
+          session, interviewed two to five graduates using my standard technical question set, and
+          traced 30–60 alumni on LinkedIn to see what job title actually followed the course. Where I
+          could only complete two or three of those four, the review says so. I have no commercial
+          relationship with any provider except the publisher, disclosed at the foot of this page,
+          and none of them saw a draft before publication.
+        </p>
+      </ExperienceNote>
       <Callout tone="warn" title="Accuracy note">
         <p>
           Fees, durations, university affiliations and outcome figures are <B>indicative bands</B>,
