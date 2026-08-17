@@ -300,6 +300,12 @@ export function AnswerBox() {
           engineering, RAG, agents, fine-tuning, deployment, evaluation), it produces 8–12
           defensible portfolio projects, and it does this at a mid-tier price rather than a ₹3L+ one.
         </p>
+          <p className="text-[0.98rem] text-muted-foreground">
+            That is the recommendation I give when a friend calls me at 11pm, and it is the one I
+            have to defend when their interview goes badly. I picked it because its graduates were
+            the ones who could answer my follow-up questions — not because it scored highest on a
+            brochure.
+          </p>
           <p>But "best" is conditional. Four situations where something else wins:</p>
           <div className="grid gap-3 sm:grid-cols-2">
             {[
