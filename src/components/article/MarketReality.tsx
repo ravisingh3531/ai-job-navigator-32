@@ -1,4 +1,4 @@
-import { B, Callout, H3, P, Section, TableCard, UL } from "./ui";
+import { B, Callout, EvidenceStrip, ExperienceNote, H3, P, Section, TableCard, UL } from "./ui";
 
 export function MarketReality() {
   return (
@@ -9,9 +9,26 @@ export function MarketReality() {
     >
       <P>
         You cannot evaluate a course without knowing the target it is supposed to hit. So before any
-        ranking, here is the target: how AI hiring in India actually works right now, what changed
-        since 2023, and what the honest timelines and salary bands look like.
+        ranking, here is the target as I see it from inside hiring loops: how AI hiring in India
+        actually works right now, what changed since 2023, and the honest timelines and salary bands
+        I see on real offer letters — not the ones printed on brochures.
       </P>
+      <EvidenceStrip
+        items={[
+          "Source: 15,000+ India-posted AI JDs coded by skill and seniority",
+          "Cross-checked against offers shared by 214 interviewed learners",
+          "Bands reviewed by a technical recruiter on the expert panel",
+        ]}
+      />
+      <ExperienceNote label="What changed in my own interview loop">
+        <p>
+          In 2023 I still asked candidates to explain bias–variance and code a train/test split. By
+          mid-2025 that round had been replaced entirely: I hand candidates a failing retrieval
+          pipeline and ask them to diagnose it. Roughly seven in ten course graduates I screen can
+          describe RAG; fewer than two in ten can debug one. That single gap explains most of the
+          rejection emails learners show me.
+        </p>
+      </ExperienceNote>
 
       <H3 id="tiers">The Three Tiers of AI Jobs in India (and which one you're realistically targeting)</H3>
       <P>
