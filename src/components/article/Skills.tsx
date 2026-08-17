@@ -1,4 +1,5 @@
 import { B, Callout, H3, H4, P, Section, TableCard, UL } from "./ui";
+import { Reveal } from "./Reveal";
 
 const layers: Array<{ title: string; body: string; interview: string }> = [
   {
@@ -69,14 +70,28 @@ export function Skills() {
 
       <H3 id="stack">The 2026 AI Job-Readiness Stack</H3>
       <div className="space-y-6">
-        {layers.map((l) => (
-          <div key={l.title} className="rounded-lg border border-border bg-card p-5">
-            <H4>{l.title}</H4>
-            <p className="mt-2 text-[1rem] leading-[1.7] text-foreground/85">{l.body}</p>
-            <p className="mt-3 text-sm font-medium text-primary">
-              Interview reality: {l.interview}
-            </p>
-          </div>
+        {layers.map((l, i) => (
+          <Reveal key={l.title} delay={(i % 3) * 70}>
+            <div className="surface-card relative overflow-hidden p-6">
+              <span
+                aria-hidden
+                className="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-primary to-primary-glow opacity-70"
+              />
+              <div className="flex items-center gap-3">
+                <span
+                  className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg font-display text-xs font-bold text-primary-foreground"
+                  style={{ background: "var(--gradient-brand)" }}
+                >
+                  L{i}
+                </span>
+                <H4>{l.title.replace(/^Layer \d+ — /, "")}</H4>
+              </div>
+              <p className="mt-3 text-[1rem] leading-[1.75] text-foreground/80">{l.body}</p>
+              <p className="mt-4 rounded-xl bg-primary-soft px-4 py-2.5 text-sm font-medium text-primary">
+                Interview reality: {l.interview}
+              </p>
+            </div>
+          </Reveal>
         ))}
       </div>
 

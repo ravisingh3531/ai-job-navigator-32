@@ -1,27 +1,100 @@
-import { B, Callout, Lead, P, UL } from "./ui";
+import { B, Callout, Lead, NoteCard, P, UL } from "./ui";
+import { Reveal } from "./Reveal";
 
 export function Hero() {
   return (
     <header className="relative overflow-hidden" style={{ background: "var(--gradient-hero)" }}>
-      <div className="mx-auto max-w-4xl px-5 py-16 sm:px-8 sm:py-24">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-          India · AI Careers · Updated 2026
-        </p>
-        <h1 className="mt-5 font-display text-4xl leading-[1.1] font-semibold text-ink-foreground sm:text-5xl">
-          Which AI Course Is Best to Get a Job in 2026? — An Honest, Hiring-First Comparison of
-          India's Top 10 AI Programs
+      <div aria-hidden className="absolute inset-0 grid-lines opacity-60" />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -top-32 -left-24 h-96 w-96 rounded-full blur-3xl"
+        style={{
+          background: "radial-gradient(circle, oklch(0.7 0.16 236 / 0.55), transparent 70%)",
+          animation: "var(--animate-float-slow)",
+        }}
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-24 top-24 h-[26rem] w-[26rem] rounded-full blur-3xl"
+        style={{
+          background: "radial-gradient(circle, oklch(0.55 0.19 282 / 0.5), transparent 70%)",
+          animation: "var(--animate-float-slow)",
+          animationDelay: "-4s",
+        }}
+      />
+      <div className="relative mx-auto max-w-5xl px-5 py-20 sm:px-8 sm:py-28">
+        <div style={{ animation: "var(--animate-reveal)" }}>
+          <span className="inline-flex items-center gap-2 rounded-full border border-primary-glow/40 bg-primary-glow/10 px-4 py-1.5 text-xs font-semibold tracking-[0.18em] text-primary-glow uppercase backdrop-blur">
+            <span className="h-1.5 w-1.5 rounded-full bg-primary-glow" />
+            India · AI careers · Updated 2026
+          </span>
+        </div>
+        <h1
+          className="mt-6 font-display text-[2.1rem] leading-[1.12] font-extrabold text-ink-foreground sm:text-[3.4rem]"
+          style={{ animation: "var(--animate-reveal)", animationDelay: "80ms" }}
+        >
+          Which AI Course Is Best to{" "}
+          <span className="text-gradient">Get a Job in 2026?</span>
         </h1>
-        <p className="mt-6 text-lg leading-[1.65] text-ink-foreground/80">
+        <p
+          className="mt-4 max-w-3xl font-display text-lg font-medium text-ink-foreground/70 sm:text-xl"
+          style={{ animation: "var(--animate-reveal)", animationDelay: "140ms" }}
+        >
+          An honest, hiring-first comparison of India's top 10 AI programs.
+        </p>
+        <p
+          className="mt-5 max-w-2xl text-base leading-[1.75] text-ink-foreground/60 sm:text-lg"
+          style={{ animation: "var(--animate-reveal)", animationDelay: "200ms" }}
+        >
           Ranked on job-description alignment, portfolio output and interview readiness — not on
           brand size or marketing budget. Includes a personalised matrix by background, budget and
           target role.
         </p>
-        <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-ink-foreground/65">
-          <span>500+ live Indian AI JDs analysed</span>
-          <span>10 programs scored on 6 criteria</span>
-          <span>~35 min read</span>
+        <div
+          className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4"
+          style={{ animation: "var(--animate-reveal)", animationDelay: "260ms" }}
+        >
+          {[
+            ["500+", "Live Indian AI job descriptions analysed"],
+            ["10", "Programs scored on 6 criteria"],
+            ["7", "Comparison tables, fully worked"],
+            ["~35 min", "Read time, no fluff"],
+          ].map(([v, l]) => (
+            <div
+              key={l}
+              className="rounded-2xl border border-primary-glow/20 bg-ink-foreground/5 p-4 backdrop-blur transition-colors hover:border-primary-glow/45"
+            >
+              <p className="font-display text-2xl font-bold text-ink-foreground">{v}</p>
+              <p className="mt-1 text-xs leading-snug text-ink-foreground/55">{l}</p>
+            </div>
+          ))}
+        </div>
+        <div
+          className="mt-9 flex flex-wrap gap-3"
+          style={{ animation: "var(--animate-reveal)", animationDelay: "320ms" }}
+        >
+          <a
+            href="#short-answer"
+            className="rounded-full px-6 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5"
+            style={{ background: "var(--gradient-brand)", boxShadow: "var(--shadow-glow)" }}
+          >
+            Read the short answer
+          </a>
+          <a
+            href="#matrix"
+            className="rounded-full border border-ink-foreground/25 px-6 py-3 text-sm font-semibold text-ink-foreground/85 transition-colors hover:bg-ink-foreground/10"
+          >
+            Find your best fit
+          </a>
         </div>
       </div>
+      <div
+        aria-hidden
+        className="absolute inset-x-0 bottom-0 h-24"
+        style={{
+          background: "linear-gradient(to top, var(--background), transparent)",
+        }}
+      />
     </header>
   );
 }
@@ -47,29 +120,27 @@ export function Intro() {
         will screen for.</B>
       </P>
       <P>Three failure patterns dominate this market. Learn to recognise them before you pay.</P>
-      <UL>
-        <li>
-          <B>The credential trap.</B> Courses that sell a university-affiliated certificate as the
-          hiring mechanism. In 2023 that partially worked. In 2026, recruiters at Indian product
-          companies and GCCs (global capability centres — the India arms of multinationals)
-          consistently report that non-degree AI certificates no longer carry weight in
-          shortlisting. The certificate opens no door on its own.
-        </li>
-        <li>
-          <B>The syllabus trap.</B> Curricula that were competitive in 2022 and have been patched
-          rather than rebuilt: six months of classical ML (regression, decision trees, scikit-learn),
-          one deep learning module, a "GenAI" bolt-on covering the ChatGPT API, and a Titanic-dataset
-          capstone. The learner graduates fluent in a stack that 2026 job descriptions barely
-          mention.
-        </li>
-        <li>
-          <B>The guarantee trap.</B> "Job guarantee," "pay after placement" and ISA (income-share
-          agreement — you pay a slice of future salary) programs whose contracts define "placement"
-          loosely enough that a ₹3.5 LPA support-engineering role satisfies it, and whose refund
-          clauses require a minimum number of applications, full attendance and passing internal
-          assessments — conditions that are, by design, failable.
-        </li>
-      </UL>
+      <div className="grid gap-4 sm:grid-cols-3">
+        <NoteCard index="01" title="The credential trap">
+          Courses that sell a university-affiliated certificate as the hiring mechanism. In 2023
+          that partially worked. In 2026, recruiters at Indian product companies and GCCs (global
+          capability centres — the India arms of multinationals) consistently report that non-degree
+          AI certificates no longer carry weight in shortlisting.{" "}
+          <B>The certificate opens no door on its own.</B>
+        </NoteCard>
+        <NoteCard index="02" title="The syllabus trap" delay={90}>
+          Curricula competitive in 2022 and patched rather than rebuilt: six months of classical ML
+          (regression, decision trees, scikit-learn), one deep learning module, a "GenAI" bolt-on
+          covering the ChatGPT API, and a Titanic-dataset capstone.{" "}
+          <B>The learner graduates fluent in a stack 2026 job descriptions barely mention.</B>
+        </NoteCard>
+        <NoteCard index="03" title="The guarantee trap" delay={180}>
+          "Job guarantee," "pay after placement" and ISA (income-share agreement — you pay a slice
+          of future salary) programs whose contracts define "placement" loosely enough that a ₹3.5
+          LPA support role satisfies it, and whose refund clauses require minimum applications, full
+          attendance and passing assessments — <B>conditions that are, by design, failable.</B>
+        </NoteCard>
+      </div>
       <P>
         Now make the cost of a wrong choice concrete, because it is not abstract. These are the
         patterns I see repeatedly among Indian learners who did everything they were told to do.
@@ -147,18 +218,29 @@ export function Intro() {
 
 export function AnswerBox() {
   return (
-    <div
-      id="short-answer"
-      className="scroll-mt-24 my-12 rounded-xl border border-accent/50 bg-highlight p-6 sm:p-8"
-      style={{ boxShadow: "var(--shadow-paper)" }}
-    >
-      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-        📌 The direct answer
-      </p>
-      <h2 className="mt-3 font-display text-2xl font-semibold text-foreground sm:text-3xl">
-        The Short Answer — Which AI Course Is Best to Get a Job in 2026?
-      </h2>
-      <div className="mt-5 space-y-4 text-[1.02rem] leading-[1.7] text-foreground/90">
+    <Reveal>
+      <div
+        id="short-answer"
+        className="relative my-14 scroll-mt-28 overflow-hidden rounded-3xl border border-primary/25 bg-card p-6 sm:p-9"
+        style={{ boxShadow: "var(--shadow-glow)" }}
+      >
+        <span
+          aria-hidden
+          className="absolute inset-x-0 top-0 h-1.5"
+          style={{ background: "var(--gradient-brand)" }}
+        />
+        <span
+          aria-hidden
+          className="pointer-events-none absolute -right-16 -bottom-20 h-64 w-64 rounded-full blur-3xl"
+          style={{ background: "radial-gradient(circle, oklch(0.7 0.16 236 / 0.22), transparent 70%)" }}
+        />
+        <span className="inline-flex items-center gap-2 rounded-full bg-primary-soft px-3 py-1 text-xs font-bold tracking-[0.16em] text-primary uppercase">
+          📌 The direct answer
+        </span>
+        <h2 className="mt-4 font-display text-2xl font-bold text-foreground sm:text-[2rem] sm:leading-tight">
+          The Short Answer — Which AI Course Is Best to Get a Job in 2026?
+        </h2>
+        <div className="relative mt-5 space-y-4 text-[1.04rem] leading-[1.75] text-foreground/85">
         <p>
           For most Indian learners whose single goal is employment in an AI or GenAI role in 2026,{" "}
           <B>LogicMojo's AI &amp; GenAI Course is the strongest overall choice</B> — because it is
@@ -166,41 +248,38 @@ export function AnswerBox() {
           engineering, RAG, agents, fine-tuning, deployment, evaluation), it produces 8–12
           defensible portfolio projects, and it does this at a mid-tier price rather than a ₹3L+ one.
         </p>
-        <p>But "best" is conditional. Four situations where something else wins:</p>
-        <ul className="space-y-2">
-          <li>
-            <B>You need a university-affiliated credential</B> for an internal promotion, a visa
-            file or an HR-gated process → upGrad (IIIT-B) or Great Learning (Great Lakes / UT
-            Austin).
-          </li>
-          <li>
-            <B>You are a fresher targeting premium product-company placements</B> and can afford
-            ₹3L+ and 12+ months → Scaler.
-          </li>
-          <li>
-            <B>Your budget is genuinely near zero</B> → the DeepLearning.AI / Coursera route plus
-            self-directed project building.
-          </li>
-          <li>
-            <B>You want an IIT/IISc brand</B> on your profile for a senior or managerial track →
-            TalentSprint's IIT/IISc-affiliated programs.
-          </li>
-        </ul>
-        <p>
-          <B>
+          <p>But "best" is conditional. Four situations where something else wins:</p>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {[
+              ["You need a university-affiliated credential", "for a promotion, visa file or HR-gated process", "upGrad (IIIT-B) or Great Learning"],
+              ["You are a fresher targeting premium product companies", "and can afford ₹3L+ and 12+ months", "Scaler"],
+              ["Your budget is genuinely near zero", "and your discipline is high", "DeepLearning.AI / Coursera + own projects"],
+              ["You want an IIT/IISc brand", "for a senior or managerial track", "TalentSprint IIT/IISc programs"],
+            ].map(([head, sub, pick]) => (
+              <div key={head} className="rounded-2xl border border-border bg-secondary/50 p-4">
+                <p className="text-sm font-semibold text-foreground">{head}</p>
+                <p className="mt-1 text-sm text-muted-foreground">{sub}</p>
+                <p className="mt-2 text-sm font-semibold text-primary">→ {pick}</p>
+              </div>
+            ))}
+          </div>
+          <p
+            className="rounded-2xl px-5 py-4 text-ink-foreground"
+            style={{ background: "var(--gradient-hero)" }}
+          >
             No course guarantees a job in 2026 — including this one. What good courses do is
             compress the time between "I want an AI job" and "I can prove I can do AI work." The
             proof is what gets hired.
-          </B>
-        </p>
-        <p className="text-sm text-muted-foreground">
-          Want the answer for your specific background? Skip to the{" "}
-          <a href="#matrix" className="font-semibold text-primary underline underline-offset-4">
-            personalised recommendation matrix
-          </a>
-          .
-        </p>
+          </p>
+          <p className="text-sm text-muted-foreground">
+            Want the answer for your specific background? Skip to the{" "}
+            <a href="#matrix" className="font-semibold text-primary underline underline-offset-4">
+              personalised recommendation matrix
+            </a>
+            .
+          </p>
+        </div>
       </div>
-    </div>
+    </Reveal>
   );
 }

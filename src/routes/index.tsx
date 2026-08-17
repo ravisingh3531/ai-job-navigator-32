@@ -26,12 +26,12 @@ export const Route = createFileRoute("/")({
 });
 
 const toc = [
-  { href: "#short-answer", label: "The short answer" },
-  { href: "#market", label: "2026 job market reality" },
-  { href: "#skills", label: "Skills that get hired" },
-  { href: "#framework", label: "Evaluation framework" },
-  { href: "#rankings", label: "Rankings & comparison" },
-  { href: "#matrix", label: "Best course for you" },
+  { href: "#short-answer", label: "The short answer", n: "01" },
+  { href: "#market", label: "2026 job market reality", n: "02" },
+  { href: "#skills", label: "Skills that get hired", n: "03" },
+  { href: "#framework", label: "Evaluation framework", n: "04" },
+  { href: "#rankings", label: "Rankings & comparison", n: "05" },
+  { href: "#matrix", label: "Best course for you", n: "06" },
 ];
 
 function Index() {
@@ -39,22 +39,21 @@ function Index() {
     <main className="min-h-screen bg-background">
       <Hero />
       <div className="mx-auto max-w-4xl px-5 py-12 sm:px-8 sm:py-16">
-        <nav
-          aria-label="Table of contents"
-          className="mb-12 rounded-lg border border-border bg-card p-5"
-          style={{ boxShadow: "var(--shadow-paper)" }}
-        >
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-            On this page
-          </p>
-          <ul className="mt-3 grid gap-2 sm:grid-cols-2">
+        <nav aria-label="Table of contents" className="surface-card mb-14 p-6 sm:p-7">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">On this page</p>
+          <ul className="mt-4 grid gap-2 sm:grid-cols-2">
             {toc.map((t) => (
               <li key={t.href}>
                 <a
                   href={t.href}
-                  className="text-[0.95rem] font-medium text-primary underline-offset-4 hover:underline"
+                  className="group flex items-center gap-3 rounded-xl border border-transparent px-3 py-2.5 transition-all hover:border-primary/20 hover:bg-primary-soft"
                 >
-                  {t.label}
+                  <span className="font-display text-xs font-bold text-primary/60 transition-colors group-hover:text-primary">
+                    {t.n}
+                  </span>
+                  <span className="text-[0.97rem] font-medium text-foreground/80 transition-colors group-hover:text-primary">
+                    {t.label}
+                  </span>
                 </a>
               </li>
             ))}
@@ -71,7 +70,7 @@ function Index() {
           <Matrix />
         </article>
 
-        <footer className="mt-16 border-t border-border pt-8 text-sm leading-relaxed text-muted-foreground">
+        <footer className="mt-20 rounded-2xl border border-border bg-secondary/60 p-6 text-sm leading-relaxed text-muted-foreground">
           <p>
             Prices, syllabi and placement policies change frequently. Verify current fees, GST, EMI
             terms, refund windows and curriculum coverage directly with each provider before
