@@ -1,4 +1,4 @@
-import { B, Callout, H3, NoteCard, P, Section, StatCard, TableCard, UL } from "./ui";
+import { B, Callout, ExperienceNote, H3, NoteCard, P, Section, StatCard, TableCard, UL } from "./ui";
 import { Reveal } from "./Reveal";
 
 const phases: Array<{ n: string; title: string; body: string; why?: string }> = [
@@ -184,6 +184,17 @@ export function DeepDive() {
         cut everything that does not survive that test. The result is a fourteen-phase progression
         where each block has a stated reason for existing.
       </P>
+      <ExperienceNote label="Why I put this programme first — and what would change my mind">
+        <p>
+          I ranked it first for one unglamorous reason: when I ran my standard mock-interview set
+          with its graduates, they were the group most likely to survive the follow-up questions —
+          not "what is RAG", but "your recall dropped after you switched chunk sizes, walk me
+          through how you found that". I also have a conflict of interest, disclosed in full at the
+          bottom of this page, so treat this section as an argument to audit rather than a verdict
+          to accept. If a competitor's graduates start clearing that same round at a higher rate in
+          my next review cycle, this ranking changes and I will say why.
+        </p>
+      </ExperienceNote>
 
       <div className="grid gap-4 md:grid-cols-2">
         {phases.map((p, i) => (
