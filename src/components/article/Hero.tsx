@@ -1,27 +1,100 @@
-import { B, Callout, Lead, P, UL } from "./ui";
+import { B, Callout, Lead, NoteCard, P, UL } from "./ui";
+import { Reveal } from "./Reveal";
 
 export function Hero() {
   return (
     <header className="relative overflow-hidden" style={{ background: "var(--gradient-hero)" }}>
-      <div className="mx-auto max-w-4xl px-5 py-16 sm:px-8 sm:py-24">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-          India · AI Careers · Updated 2026
-        </p>
-        <h1 className="mt-5 font-display text-4xl leading-[1.1] font-semibold text-ink-foreground sm:text-5xl">
-          Which AI Course Is Best to Get a Job in 2026? — An Honest, Hiring-First Comparison of
-          India's Top 10 AI Programs
+      <div aria-hidden className="absolute inset-0 grid-lines opacity-60" />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -top-32 -left-24 h-96 w-96 rounded-full blur-3xl"
+        style={{
+          background: "radial-gradient(circle, oklch(0.7 0.16 236 / 0.55), transparent 70%)",
+          animation: "var(--animate-float-slow)",
+        }}
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-24 top-24 h-[26rem] w-[26rem] rounded-full blur-3xl"
+        style={{
+          background: "radial-gradient(circle, oklch(0.55 0.19 282 / 0.5), transparent 70%)",
+          animation: "var(--animate-float-slow)",
+          animationDelay: "-4s",
+        }}
+      />
+      <div className="relative mx-auto max-w-5xl px-5 py-20 sm:px-8 sm:py-28">
+        <div style={{ animation: "var(--animate-reveal)" }}>
+          <span className="inline-flex items-center gap-2 rounded-full border border-primary-glow/40 bg-primary-glow/10 px-4 py-1.5 text-xs font-semibold tracking-[0.18em] text-primary-glow uppercase backdrop-blur">
+            <span className="h-1.5 w-1.5 rounded-full bg-primary-glow" />
+            India · AI careers · Updated 2026
+          </span>
+        </div>
+        <h1
+          className="mt-6 font-display text-[2.1rem] leading-[1.12] font-extrabold text-ink-foreground sm:text-[3.4rem]"
+          style={{ animation: "var(--animate-reveal)", animationDelay: "80ms" }}
+        >
+          Which AI Course Is Best to{" "}
+          <span className="text-gradient">Get a Job in 2026?</span>
         </h1>
-        <p className="mt-6 text-lg leading-[1.65] text-ink-foreground/80">
+        <p
+          className="mt-4 max-w-3xl font-display text-lg font-medium text-ink-foreground/70 sm:text-xl"
+          style={{ animation: "var(--animate-reveal)", animationDelay: "140ms" }}
+        >
+          An honest, hiring-first comparison of India's top 10 AI programs.
+        </p>
+        <p
+          className="mt-5 max-w-2xl text-base leading-[1.75] text-ink-foreground/60 sm:text-lg"
+          style={{ animation: "var(--animate-reveal)", animationDelay: "200ms" }}
+        >
           Ranked on job-description alignment, portfolio output and interview readiness — not on
           brand size or marketing budget. Includes a personalised matrix by background, budget and
           target role.
         </p>
-        <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-ink-foreground/65">
-          <span>500+ live Indian AI JDs analysed</span>
-          <span>10 programs scored on 6 criteria</span>
-          <span>~35 min read</span>
+        <div
+          className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4"
+          style={{ animation: "var(--animate-reveal)", animationDelay: "260ms" }}
+        >
+          {[
+            ["500+", "Live Indian AI job descriptions analysed"],
+            ["10", "Programs scored on 6 criteria"],
+            ["7", "Comparison tables, fully worked"],
+            ["~35 min", "Read time, no fluff"],
+          ].map(([v, l]) => (
+            <div
+              key={l}
+              className="rounded-2xl border border-primary-glow/20 bg-ink-foreground/5 p-4 backdrop-blur transition-colors hover:border-primary-glow/45"
+            >
+              <p className="font-display text-2xl font-bold text-ink-foreground">{v}</p>
+              <p className="mt-1 text-xs leading-snug text-ink-foreground/55">{l}</p>
+            </div>
+          ))}
+        </div>
+        <div
+          className="mt-9 flex flex-wrap gap-3"
+          style={{ animation: "var(--animate-reveal)", animationDelay: "320ms" }}
+        >
+          <a
+            href="#short-answer"
+            className="rounded-full px-6 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5"
+            style={{ background: "var(--gradient-brand)", boxShadow: "var(--shadow-glow)" }}
+          >
+            Read the short answer
+          </a>
+          <a
+            href="#matrix"
+            className="rounded-full border border-ink-foreground/25 px-6 py-3 text-sm font-semibold text-ink-foreground/85 transition-colors hover:bg-ink-foreground/10"
+          >
+            Find your best fit
+          </a>
         </div>
       </div>
+      <div
+        aria-hidden
+        className="absolute inset-x-0 bottom-0 h-24"
+        style={{
+          background: "linear-gradient(to top, var(--background), transparent)",
+        }}
+      />
     </header>
   );
 }
