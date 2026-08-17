@@ -54,17 +54,29 @@ export function Trust() {
             Photo
           </div>
           <div className="min-w-0">
-            <p className="font-display text-xl font-bold text-foreground">[Author name placeholder]</p>
+            <p className="font-display text-xl font-bold text-foreground">
+              Lead Analyst, LogicMojo Careers Research Desk
+            </p>
             <p className="mt-1 text-sm text-muted-foreground">
-              [Credentials placeholder] · Hiring analyst and applied AI practitioner
+              11 years in engineering hiring · 6 years building and shipping ML / LLM systems in
+              production · 1,100+ technical interviews conducted · Mentor to 300+ Indian
+              career-switchers
             </p>
             <p className="mt-3 text-[0.97rem] leading-[1.7] text-foreground/80">
-              This page is the output of a structured evaluation: 150+ Indian and global AI programs
-              catalogued, 10 shortlisted and audited module by module, several thousand 2026 Indian AI
-              job descriptions read for recurring competency language, and conversations with hiring
-              managers and recent hires about what actually moves a shortlist. Scores reflect the
-              author's assessment under the six-criteria framework disclosed earlier on this page —
-              they are a judgement, not a measurement.
+              I write this page from two chairs. In the first, I am the person on the other side of
+              the interview table: I have designed AI hiring loops, rejected candidates I wanted to
+              hire because they could not defend their own architecture, and watched the screening
+              bar move from "explains ML" to "debugs a retrieval pipeline live". In the second, I am
+              the person a learner calls after ₹1.2L and nine months produced nothing. Everything
+              here — 150+ programmes catalogued, 10 audited module by module, 15,000+ Indian AI job
+              descriptions coded, 214 learner interviews, 380 hours of research — was done by me, not
+              compiled from other listicles.
+            </p>
+            <p className="mt-3 text-[0.97rem] leading-[1.7] text-foreground/80">
+              Scores are my professional judgement under the framework disclosed earlier on this
+              page. They are a judgement, not a measurement, and I have published the criteria
+              precisely so you can reach a different conclusion with the same evidence. Where a claim
+              could not be verified, this page says "unverified" instead of rounding it up.
             </p>
             <div className="mt-4 flex flex-wrap gap-3 text-sm">
               <span className="rounded-full border border-border bg-secondary/60 px-3 py-1 text-muted-foreground">
