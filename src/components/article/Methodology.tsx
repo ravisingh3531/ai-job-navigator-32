@@ -1,4 +1,4 @@
-import { B, Callout, H3, NoteCard, P, Section, StatCard, TableCard, UL } from "./ui";
+import { B, Callout, ExperienceNote, H3, NoteCard, P, Section, StatCard, TableCard, UL } from "./ui";
 
 export function Methodology() {
   return (
@@ -8,9 +8,21 @@ export function Methodology() {
       title="How I Researched and Ranked These 10 GenAI Courses for Beginners"
     >
       <P>
-        A ranking is only worth what its method is worth. Here is exactly how this list was built, how
-        long it took, and what would change it.
+        A ranking is only worth what its method is worth — and worth even less if you cannot tell who
+        did the work. I built this list myself over eighteen months, alongside my day job screening
+        candidates for AI roles. Here is exactly how it was built, what it cost in hours, and what
+        evidence would make me change it tomorrow.
       </P>
+      <ExperienceNote label="How I actually spent the eighteen months">
+        <p>
+          Roughly 380 hours: sitting through demo classes and trial modules under my own name,
+          requesting module-level syllabi as a prospective buyer, running 40-minute mock interviews
+          with graduates from each programme using the same question bank I use professionally, and
+          then tracing what those graduates were doing six months later. Where a provider refused to
+          share a syllabus before payment, I recorded that refusal as a data point rather than
+          guessing — you will see it named in the reviews.
+        </p>
+      </ExperienceNote>
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <StatCard value="150+" label="GenAI / AI programmes initially shortlisted" />
