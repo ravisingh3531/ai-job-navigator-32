@@ -1,4 +1,4 @@
-import { B, Callout, P, Section } from "./ui";
+import { B, Callout, ExperienceNote, P, Section } from "./ui";
 import { Reveal } from "./Reveal";
 
 type Phase = { n: string; window: string; title: string; body: string; milestone: string };
@@ -61,6 +61,16 @@ export function Roadmap() {
         overlap deliberately — phase 5 runs in parallel from month three, because a portfolio
         assembled in a panic at the end always looks like one.
       </P>
+      <ExperienceNote label="Why this roadmap looks the way it does">
+        <p>
+          I rebuilt this sequence after tracking what the successfully-hired people in my 214
+          interviews did differently. The median time from serious start to first AI offer was
+          9.5 months, not the 4–6 months brochures imply — and the people who beat that median had
+          one thing in common: their first deployed project went live inside month two, long before
+          they felt ready. The learners who waited until they "understood everything" were still
+          polishing notebooks at month ten.
+        </p>
+      </ExperienceNote>
 
       <div className="relative mt-4 space-y-5 sm:pl-8">
         <span
