@@ -5,6 +5,8 @@ import { MarketReality } from "@/components/article/MarketReality";
 import { Skills } from "@/components/article/Skills";
 import { Framework } from "@/components/article/Framework";
 import { Rankings } from "@/components/article/Rankings";
+import { BeginnerPath } from "@/components/article/BeginnerPath";
+import { Methodology } from "@/components/article/Methodology";
 import { Matrix } from "@/components/article/Matrix";
 import { Reviews } from "@/components/article/Reviews";
 import { Quiz } from "@/components/article/Quiz";
@@ -75,7 +77,9 @@ function Index() {
             <Intro />
             <AnswerBox />
             <MarketReality />
+            <BeginnerPath />
             <Skills />
+            <Methodology />
             <Framework />
             <Rankings />
             <DeepDive />

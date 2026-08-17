@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { B, Callout, P, Section } from "./ui";
 import { Reveal } from "./Reveal";
+import { beginnerDossiers } from "./beginnerData";
 
 type Review = {
   id: string;
@@ -624,6 +625,114 @@ function Part({ label, children }: { label: string; children: React.ReactNode })
   );
 }
 
+function Stars({ score }: { score: number }) {
+  return (
+    <span className="inline-flex items-center gap-1 text-sm font-semibold text-foreground">
+      <span aria-hidden className="text-warning">
+        {"★".repeat(Math.round(score))}
+        <span className="text-border">{"★".repeat(5 - Math.round(score))}</span>
+      </span>
+      <span className="text-muted-foreground">{score.toFixed(1)}/5 for beginners</span>
+    </span>
+  );
+}
+
+function BeginnerDossierBlock({ id }: { id: string }) {
+  const d = beginnerDossiers[id];
+  if (!d) return null;
+  const p = d.placement;
+  const rows: Array<[string, string]> = [
+    ["Support model", p.model],
+    ["Hiring partners", p.partners],
+    ["Placement rate — how to read it", p.rate],
+    ["Mock interview rounds", p.mocks],
+    ["Resume / GitHub / LinkedIn", p.resume],
+    ["Career counselling", p.counselling],
+    ["Post-course support duration", p.duration],
+  ];
+  return (
+    <div className="mt-2 space-y-4 rounded-2xl border border-primary/20 bg-primary-soft/60 p-5">
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <p className="text-[0.7rem] font-bold tracking-[0.16em] text-primary uppercase">
+          Beginner &amp; placement dossier
+        </p>
+        <Stars score={d.beginnerScore} />
+      </div>
+
+      <div>
+        <p className="mb-1 text-sm font-semibold text-foreground">
+          Beginner-friendliness — prerequisites &amp; ramp-up
+        </p>
+        <p className="text-[0.95rem] leading-[1.7] text-foreground/80">{d.friendliness}</p>
+      </div>
+
+      <div>
+        <p className="mb-2 text-sm font-semibold text-foreground">
+          Step-by-step ladder: Python → ML → Deep Learning → NLP → Transformers → LLMs → RAG → Agents
+        </p>
+        <ol className="space-y-2">
+          {d.ladder.map(([stage, detail]) => (
+            <li key={stage} className="flex gap-3 rounded-xl border border-border bg-card px-3.5 py-2.5">
+              <span className="shrink-0 text-[0.78rem] font-bold tracking-wide text-primary uppercase sm:w-32">
+                {stage}
+              </span>
+              <span className="text-[0.92rem] leading-[1.65] text-foreground/80">{detail}</span>
+            </li>
+          ))}
+        </ol>
+      </div>
+
+      <div className="grid gap-4 sm:grid-cols-2">
+        <div className="rounded-xl border border-border bg-card p-4">
+          <p className="mb-1.5 text-sm font-semibold text-foreground">Capstone &amp; industry GenAI projects</p>
+          <p className="text-[0.92rem] leading-[1.65] text-foreground/80">{d.projects}</p>
+        </div>
+        <div className="rounded-xl border border-border bg-card p-4">
+          <p className="mb-1.5 text-sm font-semibold text-foreground">
+            Learning support &amp; mentorship for beginners
+          </p>
+          <p className="text-[0.92rem] leading-[1.65] text-foreground/80">{d.support}</p>
+        </div>
+      </div>
+
+      <div className="overflow-hidden rounded-xl border border-border bg-card">
+        <table className="w-full text-left text-[0.9rem]">
+          <tbody>
+            {rows.map(([k, v], i) => (
+              <tr key={k} className={i % 2 ? "bg-secondary/40" : ""}>
+                <th scope="row" className="w-52 border-b border-border px-4 py-2.5 align-top font-semibold text-foreground/75">
+                  {k}
+                </th>
+                <td className="border-b border-border px-4 py-2.5 align-top leading-[1.6] text-foreground/80">{v}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div>
+        <p className="mb-1 text-sm font-semibold text-foreground">Industry readiness — tools, frameworks, datasets</p>
+        <p className="text-[0.92rem] leading-[1.65] text-foreground/80">{d.stack}</p>
+      </div>
+
+      <div>
+        <p className="mb-2 text-sm font-semibold text-foreground">Beginner outcome snapshots (provider-stated / alumni-reported)</p>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {d.outcomes.map((o) => (
+            <div key={o.who + o.role} className="rounded-xl border border-success/30 bg-success/10 p-3.5">
+              <p className="text-[0.85rem] text-muted-foreground">{o.who}</p>
+              <p className="mt-1 text-[0.95rem] font-semibold text-foreground">{o.role}</p>
+              <p className="text-[0.88rem] text-foreground/75">
+                {o.company} · {o.pay}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function ReviewCard({ r }: { r: Review }) {
   const [open, setOpen] = useState(r.rank === 1);
   return (
@@ -665,6 +774,7 @@ function ReviewCard({ r }: { r: Review }) {
               <Part label="Projects & portfolio output">{r.projects}</Part>
               <Part label="Placement & career support — what's real">{r.placement}</Part>
               <Part label="Who gets hired from this course">{r.whoGetsHired}</Part>
+              <BeginnerDossierBlock id={r.id} />
               <Part label="Format, duration, pricing & terms">
                 <dl className="grid gap-x-6 gap-y-2 sm:grid-cols-2">
                   {r.terms.map(([k, v]) => (

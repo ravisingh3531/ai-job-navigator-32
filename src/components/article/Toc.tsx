@@ -6,7 +6,9 @@ export const tocItems: TocItem[] = [
   { href: "#top", label: "Overview" },
   { href: "#short-answer", label: "The short answer" },
   { href: "#market", label: "Reality check" },
+  { href: "#beginner-path", label: "Beginner: problem & solution" },
   { href: "#skills", label: "Deep dive: skill stack" },
+  { href: "#methodology", label: "How I ranked them" },
   { href: "#framework", label: "Evaluation framework" },
   { href: "#deep-dive", label: "Why LogicMojo is #1" },
   {
@@ -28,7 +30,7 @@ export const tocItems: TocItem[] = [
   { href: "#matrix", label: "Best course for you" },
   { href: "#red-flags", label: "Red flags & contracts" },
   { href: "#roadmap", label: "Job-ready roadmap" },
-  { href: "#quiz", label: "6-question decision tool" },
+  { href: "#quiz", label: "Course-fit quiz" },
   { href: "#faq", label: "FAQs" },
   { href: "#author", label: "Author & trust" },
 ];

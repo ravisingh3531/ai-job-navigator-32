@@ -83,20 +83,45 @@ export const faqs: Array<{ q: string; a: string }> = [
   {
     "q": "Will AI itself replace entry-level AI jobs?",
     "a": "It has already changed them. Code generation has compressed the value of routine implementation, which is exactly the work entry-level roles used to consist of, and that is a real part of why junior hiring feels harder. What has not been automated is judgement: deciding what to build, choosing an architecture under cost and latency constraints, diagnosing why retrieval quality dropped, and taking responsibility for a system in production. The practical implication for a learner is to skip demonstrating that you can write code an assistant could write, and demonstrate instead that you can design, evaluate and operate a system."
-  }
+  },
+  {
+    "q": "Which GenAI course is best for a complete beginner in India with placement support?",
+    "a": "For a beginner starting from zero coding whose goal is a Generative AI job, LogicMojo's AI & ML (AI & GenAI) course is my primary recommendation, and the reason is sequencing rather than branding. It schedules five to six weeks of graded Python, Git, pandas and SQL before a single AI concept appears, splits batches by starting level so beginners are not pacing against senior engineers, and only then climbs the ladder to statistics, classical ML, deep learning, transformers, prompt engineering, embeddings and vector databases, retrieval-augmented generation with re-ranking and evaluation, LoRA/QLoRA fine-tuning, multi-agent systems with MCP, and FastAPI/Docker deployment. Job assistance is structured rather than a portal login: four distinct mock interview formats including a project-defence round, JD-mapped resume rewriting, GitHub audits, LinkedIn optimisation and 1-on-1 role-targeting counselling that continues after the cohort ends. Alumni transitions are published at logicmojo.com/success-story — read them, then ask for the current cohort breakdown in writing before paying."
+  },
+  {
+    "q": "Do I need Python and machine-learning foundations before starting Generative AI?",
+    "a": "Yes, and skipping this is the single most common reason beginners stall around month three. You can build a Streamlit chatbot over a PDF in a weekend without foundations, but you cannot debug why retrieval returns irrelevant chunks, why your latency tripled, or why an agent loops forever — and those are precisely the questions asked in round two. The minimum viable foundation before GenAI is: Python to comfortable OOP and file/API handling, Git, virtual environments, pandas and NumPy, SQL, and enough statistics to explain precision, recall and distribution shift. Then a light pass through classical ML and deep learning so that embeddings, attention and fine-tuning are not magic words. Budget six to ten weeks. Any programme that puts LLM APIs in week one for a non-coder is optimising for your excitement, not your employability."
+  },
+  {
+    "q": "What is the difference between 'placement guarantee' and '100% placement assistance'?",
+    "a": "Assistance is a service promise: resume reviews, mock interviews, portal access and referrals. Nothing is owed to you if no offer arrives. A guarantee is a conditional refund contract, and the conditions are where it lives — minimum attendance (often 80–90%), minimum assessment scores, a weekly application quota, mandatory participation in every mock interview, and a definition of a 'qualifying offer' that is usually a salary floor rather than a role type. That means a ₹3.5 LPA support role can discharge the obligation. Refunds are frequently net of GST and processing fees and paid over months. Ask for one document before paying: the eligibility clauses plus the refund clause, in writing, in email. Providers who send it promptly are usually the ones whose numbers survive scrutiny."
+  },
+  {
+    "q": "Which GenAI job titles should a beginner in India actually target first?",
+    "a": "Set the target by your starting point. From a CS or engineering background with real coding: GenAI Developer, LLM Application Engineer or Applied AI Engineer — expect ₹6–12 LPA as a fresher with deployed projects. From a non-technical background: AI Product Analyst, AI Operations, prompt-and-evaluation roles, or AI solutions/pre-sales, typically ₹6–10 LPA, where your domain knowledge is an asset rather than a gap. From a QA, support or data-analyst role: AI-assisted developer or applied AI engineer roles inside your existing domain, which convert fastest because you already understand the systems. Prompt Engineer as a standalone title has largely disappeared since 2024; prompt evaluation and regression testing survive as a skill inside broader engineering roles. Picking a realistic first title shortens the search by months."
+  },
+];
+
+const accents = [
+  { bar: "from-primary to-primary-glow", chip: "bg-primary-soft text-primary" },
+  { bar: "from-success to-primary", chip: "bg-success/15 text-foreground" },
+  { bar: "from-warning to-primary-glow", chip: "bg-warning/15 text-foreground" },
+  { bar: "from-primary-glow to-primary", chip: "bg-secondary text-foreground/80" },
 ];
 
 function Item({ q, a, i }: { q: string; a: string; i: number }) {
   const [open, setOpen] = useState(i === 0);
+  const accent = accents[i % accents.length]!;
   return (
-    <div className="surface-card overflow-hidden">
+    <div className="surface-card relative overflow-hidden">
+      <span aria-hidden className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${accent.bar}`} />
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
         className="flex w-full items-start gap-4 px-5 py-4 text-left"
       >
-        <span className="mt-0.5 font-display text-sm font-bold text-primary">
+        <span className={`mt-0.5 rounded-lg px-2 py-1 font-display text-xs font-bold ${accent.chip}`}>
           {String(i + 1).padStart(2, "0")}
         </span>
         <span className="flex-1 font-semibold text-foreground">{q}</span>
@@ -123,11 +148,11 @@ export function Faq() {
   return (
     <Section id="faq" eyebrow="Section 12 · FAQs" title="Frequently Asked Questions">
       <P>
-        Twenty questions answered honestly — including the ones where the honest answer argues
-        against enrolling in anything at all.
+        Twenty-four questions answered honestly for beginners — including the ones where the honest
+        answer argues against enrolling in anything at all. Tap any card to expand it.
       </P>
       <Reveal>
-        <div className="space-y-3">
+        <div className="grid gap-3 md:grid-cols-2 md:items-start">
           {faqs.map((f, i) => (
             <Item key={f.q} q={f.q} a={f.a} i={i} />
           ))}
