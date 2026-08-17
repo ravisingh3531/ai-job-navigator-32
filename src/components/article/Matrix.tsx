@@ -61,7 +61,8 @@ export function Matrix() {
         minutes, and usually without another comparison article.
       </P>
       <div className="grid gap-5">
-        <div className="surface-card p-6">
+        <Reveal>
+          <div className="surface-card h-full p-6">
           <p className="font-display text-lg font-semibold text-foreground">
             1. What exactly is the job title on the offer letter you want?
           </p>
@@ -73,9 +74,11 @@ export function Matrix() {
             level is, for your purposes, the wrong course — however good it is for someone else. This
             exercise also cures a common problem: people who cannot name the role they want end up
             buying the broadest program available, which is also the slowest.
-          </p>
-        </div>
-        <div className="surface-card p-6">
+            </p>
+          </div>
+        </Reveal>
+        <Reveal>
+          <div className="surface-card h-full p-6">
           <p className="font-display text-lg font-semibold text-foreground">
             2. What is your real weekly capacity for the next 6–12 months?
           </p>
@@ -86,9 +89,11 @@ export function Matrix() {
             fee. It is better to pick a program matched to your true capacity and finish it than to
             buy the most intensive option as a form of self-motivation. Intensity is not something
             you can purchase.
-          </p>
-        </div>
-        <div className="surface-card p-6">
+            </p>
+          </div>
+        </Reveal>
+        <Reveal>
+          <div className="surface-card h-full p-6">
           <p className="font-display text-lg font-semibold text-foreground">
             3. What is the actual gap — knowledge, evidence, or access?
           </p>
@@ -103,8 +108,9 @@ export function Matrix() {
               Buying the wrong solution to the right problem is the most common and most expensive
               mistake in this market.
             </B>
-          </p>
-        </div>
+            </p>
+          </div>
+        </Reveal>
       </div>
 
       <Callout tone="ink" title="The closing honest note">
