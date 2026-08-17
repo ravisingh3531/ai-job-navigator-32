@@ -199,6 +199,74 @@ export function B({ children }: { children: ReactNode }) {
   return <strong className="font-semibold text-foreground">{children}</strong>;
 }
 
+/**
+ * First-person author note — carries the "Experience" and "Expertise"
+ * signals of Google's E-E-A-T framework in-line with the content.
+ */
+export function ExperienceNote({
+  label = "From my own hiring desk",
+  who = "Written by the lead analyst · 11 yrs in engineering hiring · 6 yrs shipping ML/LLM systems",
+  children,
+  delay = 0,
+}: {
+  label?: string;
+  who?: string;
+  children: ReactNode;
+  delay?: number;
+}) {
+  return (
+    <Reveal delay={delay}>
+      <aside
+        className="relative my-8 overflow-hidden rounded-2xl border border-primary/25 bg-card p-5 sm:p-6"
+        style={{ boxShadow: "var(--shadow-paper)" }}
+      >
+        <span
+          aria-hidden
+          className="absolute inset-y-0 left-0 w-1.5"
+          style={{ background: "var(--gradient-brand)" }}
+        />
+        <div className="flex items-start gap-4 pl-2">
+          <span
+            aria-hidden
+            className="mt-0.5 hidden h-11 w-11 shrink-0 items-center justify-center rounded-xl text-sm font-bold text-primary-foreground sm:flex"
+            style={{ background: "var(--gradient-brand)" }}
+          >
+            AN
+          </span>
+          <div className="min-w-0">
+            <p className="text-[0.68rem] font-bold tracking-[0.16em] text-primary uppercase">
+              {label}
+            </p>
+            <div className="mt-2 space-y-3 text-[1rem] leading-[1.75] text-foreground/85 italic">
+              {children}
+            </div>
+            <p className="mt-3 text-xs text-muted-foreground not-italic">{who}</p>
+          </div>
+        </div>
+      </aside>
+    </Reveal>
+  );
+}
+
+/** Compact provenance strip: where a claim came from (Trustworthiness). */
+export function EvidenceStrip({ items }: { items: string[] }) {
+  return (
+    <Reveal>
+      <div className="my-6 flex flex-wrap gap-2">
+        {items.map((i) => (
+          <span
+            key={i}
+            className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/60 px-3 py-1.5 text-xs font-medium text-muted-foreground"
+          >
+            <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-primary" />
+            {i}
+          </span>
+        ))}
+      </div>
+    </Reveal>
+  );
+}
+
 export function StatCard({
   value,
   label,
