@@ -1,4 +1,4 @@
-import { B, Callout, H3, P, Section, UL } from "./ui";
+import { B, Callout, ExperienceNote, H3, P, Section, UL } from "./ui";
 import { Reveal } from "./Reveal";
 
 const flags: Array<[string, string]> = [
